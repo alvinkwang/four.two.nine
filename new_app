@@ -1,0 +1,74 @@
+<!doctype html>
+<html ng-app="app">
+  <header>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
+    <script language="javascript" type="text/javascript">
+      angular.module('app', []);
+      
+      //Whatever you put on the controller scope,
+      //will be availalble in the HTML element bound to the controller.
+      function MyController($scope){
+        $scope.newMessage = "Module Code";
+        $scope.messages = ["IS 429"];
+        $scope.displayMsg = "";
+        
+        $scope.add = function(){
+          $scope.messages.push($scope.newMessage);
+        };
+        
+        $scope.display = function(selectedValue) {
+          if (selectedValue === 4) {
+            $scope.displayMsg = "You got it right!";
+          } else {
+            $scope.displayMsg = "Try again!";
+          }
+        }
+        
+        $scope.answer = function(operand, value1, value2) {
+          switch (operand) {
+            case 1: return value1+value2;
+            break;
+            case 2: return value1-value2;
+            break;
+            case 3: return value1*value2;
+            break;
+            case 4: return value1/value2;
+            break;
+            default: 
+          }
+          
+        }
+        
+      }
+    </script>
+  </header>
+  
+  <body ng-controller="MyController">
+    Hello!
+    Let me know what other modules you are taking this semester!
+    <br></br>     
+    <input type="text" ng-model="newMessage">
+    <input type="submit" ng-click="add()" value="add module">
+    <br>
+    Modules everyone is taking: <br>
+    <ul>
+      <li ng-repeat="message in messages">
+        {{message}}
+      </li>
+    </ul>
+    
+    Sample Question:
+    <br/>What is 2 x 2?
+    <br/>
+    <input type="button" ng-click="display(3)" value="3">
+    <input type="button" ng-click="display(4)" value="4">
+    
+    <br>
+
+    {{displayMsg}}    
+    
+    
+    
+  </body>
+  
+</html>
