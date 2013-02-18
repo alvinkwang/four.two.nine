@@ -58,21 +58,52 @@
 
 <h3>1. Download Files</h3>
 
-<p>Artist Dataset: </p>
-<p>Script: </p>
+<p>Artist Dataset:
+<br>Script: </p>
 
 <h3>2. Setup Amazon S3 and upload files</h3>
 
 <p>
-1. Login to Amazon <br>
-2. Open Amazon S3 console<br>
-3. Click "Create Bucket"<br>
-4. Give your bucket a unique name (eg. <yourname>artist429) and select Singapore in Region dropdown<br>
-5.  
+a. Login to Amazon <br>
+b. Open Amazon S3 console<br>
+c. Click "Create Bucket"<br>
+d. Give your bucket a unique name (eg. <yourname>artist429) and select Singapore in Region dropdown<br>
+e. Select the bucket you have just created <br>
+f. Click "Create Folder" and create a new folder named "input"
+g. Select the folder ("input") you have just created <br>
+h. Click "Upload" and select sample data "sampleArtist.csv" to upload <br>
+i. Go back one level to your bucket <br>
+j. Click "Upload" and select script "wordSplitter.py" to upload <br>
+k. Done!
 </p>
 
-<p>p1</p>
-<p>p2</p>
+<h3>3. Launch Job Flow</h3>
+
+<p>
+a. Open Amazon Elastic MapReduce console <br>
+b. Click "Create New Job Flow" <br>
+c. Enter a Job Flow Name. (eg. Analyze Artist) <br>
+d. Hadoop version*: "Hadoop 1.0.3(Amazon Distribution)"<br>
+e. Create a Job Flow*:"Streaming"<br>
+f. Continue<br>
+g. Input Location*: <bucketname>/<foldername> (eg. <yourname>artist429/input) <br>
+h. Output Location*: <bucketname>/output (eg. <yourname>artist429/output) <br>
+i. Mapper*: <bucketname>/wordSplitter.py (eg. <yourname>artist429/wordSplitter.py) <br>
+j. Extra Args*: (leave it blank) <br>
+k. Continue<br>
+l. Instance Type: Small (m1.small)<br>
+m. Core Instance Group:<br>
+Instance Count: 2; Instance Type: Small (m1.small) <br>
+n. Task Instance Group: <br>
+Instance Count: 2; Instance Type: Small (m1.small) <br>
+o. Continue<br>
+p. Leave all fields on "Advance Options" as defaults<br>
+q. Continue <br>
+r. Leave all fields on "Bootstrap Actions" as defaults<br>
+s. Continue <br>
+t. Review information and click "Create Job Flow" <br>
+u. Done!
+</p>
 
 <h3>Authors and Contributors</h3>
 
