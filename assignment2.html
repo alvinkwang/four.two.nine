@@ -49,61 +49,76 @@
 
 <p>Follow the step by step instructions to learn how to use Amazon Elastic MapReduce (Amazon EMR). Become a pro in an hour simply by following these steps!</p>
 
-<pre><code>1. Download sample dataset and script
-2. Setup Amazon S3 Bucket and upload files
-3. Launch Job Flow
-4. Analyze Results
-5. Have a cup of coffee and marvel at yourself becoming an EMR expert
+<pre><code>
+a. Download sample dataset and script
+b. Setup Amazon S3 Bucket and upload files
+c. Launch Job Flow
+d. Analyze Results
+e. Have a cup of coffee and marvel at yourself becoming an EMR expert
 </code></pre>
 
-<h3>1. Download Files</h3>
+<h3>a. Download Files</h3>
 
 <p>Artist Dataset:
 <br>Script: </p>
 
-<h3>2. Setup Amazon S3 and upload files</h3>
+<h3>b. Setup Amazon S3 and upload files</h3>
 
 <p>
-a. Login to Amazon <br>
-b. Open Amazon S3 console<br>
-c. Click "Create Bucket"<br>
-d. Give your bucket a unique name (eg. <yourname>artist429) and select Singapore in Region dropdown<br>
-e. Select the bucket you have just created <br>
-f. Click "Create Folder" and create a new folder named "input"
-g. Select the folder ("input") you have just created <br>
-h. Click "Upload" and select sample data "sampleArtist.csv" to upload <br>
-i. Go back one level to your bucket <br>
-j. Click "Upload" and select script "wordSplitter.py" to upload <br>
-k. Done!
+1. Login to Amazon <br>
+2. Open Amazon S3 console<br>
+3. Click "Create Bucket"<br>
+4. Give your bucket a unique name (eg. <yourname>artist429) and select Singapore in Region dropdown<br>
+5. Select the bucket you have just created <br>
+6. Click "Create Folder" and create a new folder named "input"
+7. Select the folder ("input") you have just created <br>
+8. Click "Upload" and select sample data "sampleArtist.csv" to upload <br>
+9. Go back one level to your bucket <br>
+10. Click "Upload" and select script "wordSplitter.py" to upload <br>
+11. Done!
 </p>
 
-<h3>3. Launch Job Flow</h3>
+<h3>c. Launch Job Flow</h3>
 
 <p>
-a. Open Amazon Elastic MapReduce console <br>
-b. Click "Create New Job Flow" <br>
-c. Enter a Job Flow Name. (eg. Analyze Artist) <br>
-d. Hadoop version*: "Hadoop 1.0.3(Amazon Distribution)"<br>
-e. Create a Job Flow*:"Streaming"<br>
-f. Continue<br>
-g. Input Location*: <bucketname>/<foldername> (eg. <yourname>artist429/input) <br>
-h. Output Location*: <bucketname>/output (eg. <yourname>artist429/output) <br>
-i. Mapper*: <bucketname>/wordSplitter.py (eg. <yourname>artist429/wordSplitter.py) <br>
-j. Extra Args*: (leave it blank) <br>
-k. Continue<br>
-l. Instance Type: Small (m1.small)<br>
-m. Core Instance Group:<br>
+1. Open Amazon Elastic MapReduce console <br>
+2. Click "Create New Job Flow" <br>
+3. Enter a Job Flow Name. (eg. Analyze Artist) <br>
+4. Hadoop version*: "Hadoop 1.0.3(Amazon Distribution)"<br>
+5. Create a Job Flow*:"Streaming"<br>
+6. Continue<br>
+7. Input Location*: <bucketname>/<foldername> (eg. <yourname>artist429/input) <br>
+8. Output Location*: <bucketname>/output (eg. <yourname>artist429/output) <br>
+9. Mapper*: <bucketname>/wordSplitter.py (eg. <yourname>artist429/wordSplitter.py) <br>
+10. Extra Args*: (leave it blank) <br>
+11. Continue<br>
+12. Instance Type: Small (m1.small)<br>
+13. Core Instance Group:<br>
 Instance Count: 2; Instance Type: Small (m1.small) <br>
-n. Task Instance Group: <br>
+14. Task Instance Group: <br>
 Instance Count: 2; Instance Type: Small (m1.small) <br>
-o. Continue<br>
-p. Leave all fields on "Advance Options" as defaults<br>
-q. Continue <br>
-r. Leave all fields on "Bootstrap Actions" as defaults<br>
-s. Continue <br>
-t. Review information and click "Create Job Flow" <br>
-u. Done!
+15. Continue<br>
+16. Leave all fields on "Advance Options" as defaults<br>
+17. Continue <br>
+18. Leave all fields on "Bootstrap Actions" as defaults<br>
+19. Continue <br>
+20. Review information and click "Create Job Flow" <br>
+21. Done!
 </p>
+
+<p>PS: Grab a cup of coffee and wait while EMR does all the work for you!</p>
+
+<h3>d. Analyze Results</h3>
+
+<p>
+1. Open Amazon S3 console <br>
+2. Navigate to bucket that you have created (eg. <yourname>artist429)<br>
+3. Double click on "output folder" <br>
+4. Download all .txt files containing results from the EMR job <br>
+5. Done!
+</p>
+
+<p>Congratulations on becoming an Amazon EMR expert!</p>
 
 <h3>Authors and Contributors</h3>
 
